@@ -46,5 +46,14 @@ def get_python(text):
     return f"Python {text}".replace("_", " ")
 
 
+@app.get("/number/<int:n>")
+def get_number(n):
+    """
+    Returns 'n is a number if the route param is an int
+    """
+
+    return f"{n} is a number"
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
