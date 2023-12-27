@@ -3,6 +3,7 @@
 Defines a Flask web app with routes
 """
 from flask import Flask
+from flask import render_template
 
 app = Flask(__name__)
 
@@ -53,6 +54,14 @@ def get_number(n):
     """
 
     return f"{n} is a number"
+
+
+@app.get("/number_template/<int:n>", strict_slashes=False)
+def get_number_template(n):
+    """
+    Displays input number in an html page
+    """
+    return render_template("5-number.html", n=n)
 
 
 if __name__ == "__main__":

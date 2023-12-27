@@ -37,7 +37,7 @@ def get_c(text):
     return f"C {text}".replace("_", " ")
 
 
-@app.get("/python/", defaults={"text": "is cool"})
+@app.get("/python/", defaults={"text": "is cool"}, strict_slashes=False)
 @app.get("/python/<text>", strict_slashes=False)
 def get_python(text):
     """
