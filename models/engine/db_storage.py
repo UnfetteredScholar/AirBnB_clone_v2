@@ -36,7 +36,7 @@ class DBStorage:
         dictionary = {}
         classes = (State, City, User, Place, Review, Amenity)
         if cls is not None:
-            classes = (cls)
+            classes = (cls, )
         for cls_type in classes:
             objs = self.__session.query(cls_type).all()
 
@@ -79,4 +79,8 @@ class DBStorage:
         Session = scoped_session(session_factory)
         self.__session = Session()
 
-
+    def close(self):
+        """
+        Closes a db storage session
+        """
+        self.__session.close()
