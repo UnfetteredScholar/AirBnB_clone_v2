@@ -43,10 +43,11 @@
 
 	max-height: 300px;
 	overflow: auto;
+	z-index: 5;
 }
 
 .locations:hover .popover {
-	display: inline-block;
+	display: block;
 }
 
 .amenities:hover .popover {
@@ -59,8 +60,7 @@ ul {
 	padding-bottom: 20px;
 }
 
-li {
-}	
+
 
 h2 {
 	font-size: 16px;
